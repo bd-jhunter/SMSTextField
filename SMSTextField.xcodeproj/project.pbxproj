@@ -12,6 +12,8 @@
 		427AE1F62282C3E500D78344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427AE1F42282C3E500D78344 /* Main.storyboard */; };
 		427AE1F82282C3E700D78344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427AE1F72282C3E700D78344 /* Assets.xcassets */; };
 		427AE1FB2282C3E700D78344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427AE1F92282C3E700D78344 /* LaunchScreen.storyboard */; };
+		427AE2042282C54200D78344 /* SMSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427AE2032282C54200D78344 /* SMSTextField.swift */; };
+		42F4A42C2284206A00DB9BC6 /* JHCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4A42B2284206A00DB9BC6 /* JHCodeTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		427AE1F72282C3E700D78344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		427AE1FA2282C3E700D78344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		427AE1FC2282C3E700D78344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		427AE2032282C54200D78344 /* SMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSTextField.swift; sourceTree = "<group>"; };
+		42F4A42B2284206A00DB9BC6 /* JHCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHCodeTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,22 @@
 		427AE1EF2282C3E500D78344 /* SMSTextField */ = {
 			isa = PBXGroup;
 			children = (
+				427AE2022282C53200D78344 /* SMSTextField */,
 				427AE1F02282C3E500D78344 /* AppDelegate.swift */,
 				427AE1F22282C3E500D78344 /* ViewController.swift */,
 				427AE1F42282C3E500D78344 /* Main.storyboard */,
 				427AE1F72282C3E700D78344 /* Assets.xcassets */,
 				427AE1F92282C3E700D78344 /* LaunchScreen.storyboard */,
 				427AE1FC2282C3E700D78344 /* Info.plist */,
+			);
+			path = SMSTextField;
+			sourceTree = "<group>";
+		};
+		427AE2022282C53200D78344 /* SMSTextField */ = {
+			isa = PBXGroup;
+			children = (
+				427AE2032282C54200D78344 /* SMSTextField.swift */,
+				42F4A42B2284206A00DB9BC6 /* JHCodeTextField.swift */,
 			);
 			path = SMSTextField;
 			sourceTree = "<group>";
@@ -136,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				427AE1F32282C3E500D78344 /* ViewController.swift in Sources */,
+				427AE2042282C54200D78344 /* SMSTextField.swift in Sources */,
+				42F4A42C2284206A00DB9BC6 /* JHCodeTextField.swift in Sources */,
 				427AE1F12282C3E500D78344 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
