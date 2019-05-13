@@ -22,22 +22,16 @@
                                 <rect key="frame" x="247" y="538" width="47" height="30"/>
                                 <state key="normal" title="Resign"/>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcs-K0-ogV" customClass="SMSTextField" customModule="SMSTextField" customModuleProvider="target">
-                                <rect key="frame" x="34" y="142" width="260" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VLr-8O-Pu8" customClass="JHCodeTextField" customModule="SMSTextField" customModuleProvider="target">
-                                <rect key="frame" x="40" y="340" width="254" height="128"/>
+                                <rect key="frame" x="40" y="116" width="254" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wcs-K0-ogV" secondAttribute="trailing" constant="26" id="1kj-nj-lAX"/>
-                            <constraint firstItem="wcs-K0-ogV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="4L3-aO-PbJ"/>
                             <constraint firstItem="VLr-8O-Pu8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5qa-ae-CQT"/>
-                            <constraint firstItem="wcs-K0-ogV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="VIL-kP-saS"/>
-                            <constraint firstItem="VLr-8O-Pu8" firstAttribute="top" secondItem="wcs-K0-ogV" secondAttribute="bottom" constant="70" id="XZ0-pS-Fo5"/>
+                            <constraint firstItem="VLr-8O-Pu8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Oop-s4-7fm"/>
+                            <constraint firstItem="v1l-zY-kjd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="gf6-Mc-JFD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v1l-zY-kjd" secondAttribute="bottom" id="i9G-et-08r"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1l-zY-kjd" secondAttribute="trailing" constant="26" id="kv6-FJ-Bua"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VLr-8O-Pu8" secondAttribute="trailing" constant="26" id="ntU-h9-klO"/>
@@ -47,7 +41,6 @@
                     <navigationItem key="navigationItem" id="KxI-aU-bLt"/>
                     <connections>
                         <outlet property="codeTextField" destination="VLr-8O-Pu8" id="aaP-Q1-EXg"/>
-                        <outlet property="smsTextField" destination="wcs-K0-ogV" id="ohw-ZX-jtb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

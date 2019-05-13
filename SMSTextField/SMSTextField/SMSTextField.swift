@@ -18,6 +18,7 @@ private class SMSInnerTextField: UITextField {
     }
 }
 
+@available(iOS, deprecated: 12.0, message: "So many problem implement grid UI via setting blanking between characters.")
 class SMSTextField: UIView {
     
     // Mark: - Properties

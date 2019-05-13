@@ -134,6 +134,17 @@ private class JHCodeCharacterView: UIView {
     }
 }
 
+// MARK: - Disable user menu
+class JHInnerTextField: UITextField {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+
+    override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
+        return []
+    }
+}
+
 class JHCodeTextField: UIView {
     
     // MARK: - Properties
@@ -155,14 +166,21 @@ class JHCodeTextField: UIView {
         }
     }
     
+    var underlineSpace: Float = 18.0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     var keyboardType: UIKeyboardType {
         get { return innerTextField.keyboardType }
         set { innerTextField.keyboardType = newValue }
     }
     
     private weak var characterView: JHCodeCharacterView!
-    private weak var innerTextField: UITextField!
+    private weak var innerTextField: JHInnerTextField!
     private weak var underlineLayer: CALayer?
+    private weak var underlineShapeLayer: CAShapeLayer?
 
     private var fullyTextSpace: CGSize {
         let text = String(repeating: "9", count: textLimited) as NSString
@@ -227,7 +245,7 @@ class JHCodeTextField: UIView {
     
     // MARK: - Private methods
     private func setupView() {
-        let textField: UITextField = {
+        let textField: JHInnerTextField = {
             addSubview($0)
             $0.borderStyle = .none
             $0.textAlignment = .left
@@ -257,7 +275,7 @@ class JHCodeTextField: UIView {
             addConstraints(constraints)
 
             return $0
-        }(UITextField(frame: .zero))
+        }(JHInnerTextField(frame: .zero))
         self.innerTextField = textField
         
         let characterView = JHCodeCharacterView(frame: .zero)
@@ -275,15 +293,22 @@ class JHCodeTextField: UIView {
     }
     
     private func updateUnderline() {
-        if underlineLayer == nil {
-            let underlineLayer = CALayer()
-            self.underlineLayer = underlineLayer
-            layer.addSublayer(underlineLayer)
-            underlineLayer.backgroundColor = underlineColor.cgColor
-        }
-        
         let rect = bounds
-        underlineLayer?.frame = CGRect(x: rect.origin.x, y: rect.origin.y + rect.size.height - 2, width: rect.size.width, height: 2.0)
+        let baseWidth = Float(rect.width) / Float(textLimited)
+        if underlineShapeLayer == nil {
+            let underlineLayer = CAShapeLayer()
+            underlineShapeLayer = underlineLayer
+            layer.addSublayer(underlineLayer)
+            underlineLayer.strokeColor = underlineColor.cgColor
+            underlineLayer.fillColor = UIColor.clear.cgColor
+            underlineLayer.lineCap = .round
+            underlineLayer.lineWidth = 2.0
+        }
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: CGFloat(underlineSpace / 2.0), y: rect.origin.y + rect.size.height - 2.0))
+        path.addLine(to: CGPoint(x: rect.size.width - CGFloat(underlineSpace / 2.0), y: rect.origin.y + rect.size.height - 2.0))
+        underlineShapeLayer?.path = path
+        underlineShapeLayer?.lineDashPattern = [NSNumber(value: baseWidth - underlineSpace), NSNumber(value: underlineSpace)]
     }
     
     private func updateText() {
@@ -295,8 +320,14 @@ class JHCodeTextField: UIView {
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension JHCodeTextField: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return string.count == 0 || textField.text?.count ?? 0 < textLimited
+        if string.count == 0 {
+            return true
+        }
+        
+        let newLength = (textField.text?.count ?? 0) + string.count - range.length
+        return newLength <= textLimited
     }
 }
