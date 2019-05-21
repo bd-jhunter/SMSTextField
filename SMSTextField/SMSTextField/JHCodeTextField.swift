@@ -143,6 +143,10 @@ class JHInnerTextField: UITextField {
     override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
         return []
     }
+    
+    override func caretRect(for position: UITextPosition) -> CGRect {
+        return .zero
+    }
 }
 
 class JHCodeTextField: UIView {
@@ -249,7 +253,7 @@ class JHCodeTextField: UIView {
             addSubview($0)
             $0.borderStyle = .none
             $0.textAlignment = .left
-            $0.tintColor = .clear
+            $0.tintColor = .white
             $0.textColor = .clear
             $0.font = UIFont.systemFont(ofSize: 14.0)
             $0.keyboardType = .numberPad
