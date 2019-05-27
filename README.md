@@ -1,5 +1,8 @@
 # SMSTextField
-Subclass of UITextField with underline for sms verification code inputing
+
+Subclass of `UITextField` with underline for sms verification code inputing
+
+`UITextField`子类，用于短信验证码输入。支持定义字体、验证码长度、下划线颜色。
 
 ![Demo](./onetimecode.gif)
 
