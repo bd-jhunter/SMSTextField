@@ -3,6 +3,7 @@
 Subclass of `UITextField` with underline for sms verification code inputing
 
 `UITextField`子类，用于短信验证码输入。支持定义字体、验证码长度、下划线颜色。
+没有定义delegate，如果您需要，可以自己定义，并不麻烦。
 
 ![Demo](./onetimecode.gif)
 

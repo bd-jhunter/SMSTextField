@@ -181,24 +181,14 @@ class JHCodeTextField: UIView {
         set { innerTextField.keyboardType = newValue }
     }
     
+    var text: String {
+        return characterView.text
+    }
+    
     private weak var characterView: JHCodeCharacterView!
     private weak var innerTextField: JHInnerTextField!
     private weak var underlineLayer: CALayer?
     private weak var underlineShapeLayer: CAShapeLayer?
-
-    private var fullyTextSpace: CGSize {
-        let text = String(repeating: "9", count: textLimited) as NSString
-        let fontAttributes: [NSAttributedString.Key: Any] = [.font: font]
-        let rect = text.boundingRect(with: bounds.size, options: .usesLineFragmentOrigin, attributes: fontAttributes, context: nil)
-        return rect.size
-    }
-    
-    private var space: Float {
-        let textRect = bounds
-        let totalSize = fullyTextSpace
-        let spacing = textRect.size.width - totalSize.width
-        return Float(spacing) / Float(textLimited + 1)
-    }
 
     // MARK: - Lifecycle
     override init(frame: CGRect) {

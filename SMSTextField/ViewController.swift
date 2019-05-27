@@ -16,8 +16,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         codeTextField.update(textLimited: 6, textColor: .blue, font: UIFont.systemFont(ofSize: 30), underlineColor: .darkGray)
+        
+        let button = UIBarButtonItem(title: "Text", style: .plain, target: self, action: #selector(onTest(sender:)))
+        navigationItem.leftBarButtonItem = button
     }
 
-
+    @objc private func onTest(sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: codeTextField.text, message: "SMS code is \(codeTextField.text)", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { _ in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
 }
 

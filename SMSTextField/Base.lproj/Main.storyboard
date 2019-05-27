@@ -18,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1l-zY-kjd">
-                                <rect key="frame" x="247" y="538" width="47" height="30"/>
-                                <state key="normal" title="Resign"/>
-                            </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VLr-8O-Pu8" customClass="JHCodeTextField" customModule="SMSTextField" customModuleProvider="target">
                                 <rect key="frame" x="40" y="116" width="254" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,9 +27,6 @@
                         <constraints>
                             <constraint firstItem="VLr-8O-Pu8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5qa-ae-CQT"/>
                             <constraint firstItem="VLr-8O-Pu8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Oop-s4-7fm"/>
-                            <constraint firstItem="v1l-zY-kjd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="gf6-Mc-JFD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v1l-zY-kjd" secondAttribute="bottom" id="i9G-et-08r"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1l-zY-kjd" secondAttribute="trailing" constant="26" id="kv6-FJ-Bua"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VLr-8O-Pu8" secondAttribute="trailing" constant="26" id="ntU-h9-klO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
